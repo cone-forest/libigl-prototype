@@ -19,12 +19,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04, macos-latest]
+        os: [ubuntu-latest, macos-latest]
         config: [Release]
         include:
           - os: macos-latest
             name: macOS
-          - os: ubuntu-20.04
+          - os: ubuntu-latest
             name: Linux
     steps:
       - name: Checkout repository
@@ -74,7 +74,7 @@ jobs:
 
   Windows:
     name: Windows (${{ matrix.config }})
-    runs-on: windows-2019
+    runs-on: windows-latest
     env:
       CC: cl.exe
       CXX: cl.exe
